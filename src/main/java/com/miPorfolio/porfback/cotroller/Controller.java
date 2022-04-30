@@ -28,19 +28,23 @@ public class Controller {
     @Autowired ISkillService habilServ;
     
 //--------------------------- PERSONA ------------------------------  
-    @PostMapping("/new/persona")
+    @PostMapping("/persona/new")
     public void agregarPersona(@RequestBody Persona pers){
        persoServ.crearPersona(pers);
     }
-    @GetMapping("/ver/personas")
+    @GetMapping("/personas/ver")
     @ResponseBody    
     public List<Persona> verPersonas(){
         return persoServ.verPersonas();
     }
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping ("/persona/delete/{id}")
     public void borrarPersona ( @PathVariable Long id){
         persoServ.borrarPersona(id);
     }
+    @PostMapping("/persona/update")
+    public void acualizaPersona(@RequestBody Persona pers ){
+        persoServ.atualizarPerona(pers);
+    } 
 //-----------------------------------------------------------------------
    
 
@@ -85,10 +89,6 @@ public class Controller {
     public void acualizaSkill(@RequestBody Skill habilidad ){
         habilServ.actualizaSkill(habilidad);
     } 
-
-
-
-
 
 
 //-------------------------------------------------------------------------
