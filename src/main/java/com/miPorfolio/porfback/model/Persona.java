@@ -17,17 +17,27 @@ public class Persona {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
    
-    private String  nombre;
+    private String nombre;
     private String apellido;
+    private String banner;
+    private String fPerfil;
+    private String titulo;
+    private String about;
     
     public Persona(){
     }
 
-    public Persona(Long id, String nombre, String apellido) {
+    public Persona(Long id, String nombre, String apellido, String banner, String fPerfil, String titulo, String about) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.banner = banner;
+        this.fPerfil = fPerfil;
+        this.titulo = titulo;
+        this.about = about;
     }
+
+    
     
    
 }
